@@ -97,6 +97,8 @@ jobs:
 
     - name: Apply patches   
       run: |
+        git config --global user.name "OpenWrt Builder"
+        git config --global user.email "buster-openwrt@ovvo.uk"
         cp patchs/0001-show-soc-status-on-luci.patch $OPENWRT_PATH/feeds/luci/0001-show-soc-status-on-luci.patch
         cd $OPENWRT_PATH/feeds/luci
         git apply 0001-show-soc-status-on-luci.patch
@@ -166,13 +168,13 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 固件信息
+          ###  固件信息
           - 这是带WIFI以及NSS且适用于EMMC的6.1内核固件
-          - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
-          - ⚽ 固件源码: ${{ env.REPO_URL }}
-          - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.1.1
-          - 🔑 默认密码: password
-          ### 🧊 固件版本
+          -  这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
+          -  固件源码: ${{ env.REPO_URL }}
+          -  源码分支: ${{ env.REPO_BRANCH }}
+          -  默认地址: 192.168.1.1
+          -  默认密码: password
+          ###  固件版本
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
           - ${{ env.VERSION_INFO }}
