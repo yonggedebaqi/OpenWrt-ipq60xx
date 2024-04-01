@@ -97,8 +97,6 @@ jobs:
 
     - name: Apply patches   
       run: |
-        git config --global user.name "OpenWrt Builder"
-        git config --global user.email "buster-openwrt@ovvo.uk"
         cp patchs/0001-show-soc-status-on-luci.patch $OPENWRT_PATH/feeds/luci/0001-show-soc-status-on-luci.patch
         cd $OPENWRT_PATH/feeds/luci
         git apply 0001-show-soc-status-on-luci.patch
