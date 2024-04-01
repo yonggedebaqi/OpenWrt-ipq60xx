@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: Check Server Performance
       run: |
-        echo "警告⚠"
+        echo "警告"
         echo "分配的服务器性能有限，若选择的插件过多，务必注意CPU性能！"
         echo -e "已知CPU型号（降序）：7763，8370C，8272CL，8171M，E5-2673 \n"
         echo "--------------------------CPU信息--------------------------"
@@ -97,7 +97,7 @@ jobs:
 
     - name: Apply patches   
       run: |
-        cp patchs/0001-show-soc-status-on-luci.patch $OPENWRT_PATH/feeds/luci 0001-show-soc-status-on-luci.patch
+        cp patchs/0001-show-soc-status-on-luci.patch $OPENWRT_PATH/feeds/luci/0001-show-soc-status-on-luci.patch
         cd $OPENWRT_PATH/feeds/luci
         git apply 0001-show-soc-status-on-luci.patch
   
